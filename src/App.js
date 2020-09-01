@@ -19,11 +19,17 @@ class App extends React.Component {
       .then(response => response.json())
       .then(todos => this.setState({todos}))
   }
+
+  addTodo = (newTodo) => {
+    this.setState({
+      todos: [...this.state.todos, newTodo]
+    })
+  }
   render() {
     return (
       <div className="App">
         <h1>Todo App</h1>
-        <TodoForm />
+        <TodoForm addTodo = {this.addTodo}/>
         <TodoContainer todos = {this.state.todos} />
       </div>
     );
