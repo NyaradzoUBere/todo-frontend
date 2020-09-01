@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoContainer from './components/TodoContainer'
+import TodoForm from './components/TodoForm'
 import './App.css';
 
 const todosURL = "http://localhost:3000/todos"
@@ -22,6 +23,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Todo App</h1>
+        <TodoForm />
         <TodoContainer todos = {this.state.todos} />
       </div>
     );
